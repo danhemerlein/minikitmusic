@@ -14,7 +14,8 @@ const MainView = ({ model }) => {
           render={() => 
             <HomePage 
               image1SRC={get(model, "fields.backgroundImage.fields.file.url", {})}
-              image2SRC={get(model, "fields.backgroundImage2.fields.file.url", {})} />
+              image2SRC={get(model, "fields.backgroundImage2.fields.file.url", {})} 
+              />
             } 
           />
         </Switch>

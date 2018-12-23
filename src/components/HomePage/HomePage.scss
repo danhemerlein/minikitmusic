@@ -1,3 +1,13 @@
 .HomePage {
+  &__image1 {
+    width: 65%;
+  }
 
+  &__image2 {
+  width: 35%;
+  }
+
+  &__headline {
+    font-size: 5rem;
+  }
 }
