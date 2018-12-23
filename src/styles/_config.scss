@@ -10,3 +10,8 @@ $breakpoints: (
   "xl": 1152px,
   "xxl": 1280px
 );
+
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
