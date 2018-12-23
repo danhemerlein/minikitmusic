@@ -17,7 +17,7 @@ class HomePage extends Component {
       backgroundImage: "url(" + this.props.image2SRC + ")",
     };
     
-    return <div className={cx("w100 vh100 bg-color-black p1")}>
+    return <div className={cx("HomePage w100 vh100 bg-color-black p1")}>
         <div className={cx("w100 h100 relative")}>
           <div className={cx("w100 h100 absolute flex")}>
             <div style={bgImage1} className={cx("HomePage__image1 h100 bg-cover overflow-hidden flex justify-between")}>
