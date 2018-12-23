@@ -9,24 +9,27 @@ import InstaIcon from "components/icons/Insta";
 
 class HomePage extends Component {
   render() {
+
+    const mainBG = { 
+      backgroundImage: "url('/assets/RI8.png')", 
+      backgroundPosition: "25% 75%", 
+      backgroundSize: "contain",
+    };
+
     const bgImage1 = {
-      backgroundImage: "url(" + this.props.image1SRC + ")",
+      backgroundImage: "url(" + this.props.image1SRC + ")"
     };
 
     const bgImage2 = {
-      backgroundImage: "url(" + this.props.image2SRC + ")",
+      backgroundImage: "url(" + this.props.image2SRC + ")"
     };
     
-    return <div className={cx("HomePage w100 vh100 bg-color-black p1")}>
+    return <div style={mainBG} className={cx("HomePage overflow-hidden w100 vh100 p1")}>
         <div className={cx("w100 h100 relative")}>
           <div className={cx("w100 h100 absolute flex")}>
             <div style={bgImage1} className={cx("HomePage__image1 h100 bg-cover overflow-hidden flex justify-between")}>
-              <h1
-                className={cx(
-                  "HomePage__headline cursive color-white p1 col-6"
-                )}
-              >
-              <a href="/">minikit</a>
+              <h1 className={cx("HomePage__headline cursive color-white p1 col-6")}>
+                <a href="/">minikit</a>
               </h1>
               <div className={cx("flex flex-col col-6")}>
                 <h3
