@@ -31,6 +31,7 @@ export default class SignUpForm extends PureComponent {
       zipcode: '',
       message: '',
       messageActive: false,
+      closeOverlay: false
     }
   }
 
@@ -38,14 +39,20 @@ export default class SignUpForm extends PureComponent {
     this.setState({ [event.target.name]: event.target.value })
   }
 
+  componentDidUpdate() {
+    if (this.state.closeOverlay) {
+      setTimeout(() => {
+        this.props.clickHandler();
+      }, 2500);
+    }
+  }
+
   render() {
     return <div className="SignUpForm w100">
         <MailchimpSubscribe url={MAILCHIMP_URL} render={({ subscribe, status }) => <div>
               <div className={cx("flex justify-end w100")}>
                 <div className={cx("pointer")}>
-                  <CloseIcon 
-                    clickHandler={this.props.clickHandler}
-                  />
+                  <CloseIcon clickHandler={this.props.clickHandler} />
                 </div>
               </div>
               <form className="flex flex-col items-center justify-center" onSubmit={event => {
@@ -84,23 +91,27 @@ export default class SignUpForm extends PureComponent {
                       EMAIL: result.value.emailAddress,
                       MMERGE6: result.value.zipcode
                     });
-                    setTimeout(() => {
-                      this.props.clickHandler();
-                    }, 3500);
+                    // if (this.state.closeOverlay) {
+                    //   setTimeout(() => {
+                    //     this.props.clickHandler();
+                    //   }, 3500);
+                    // }
                   }
                 }}>
-                <h3 className="SignUpForm__headline px2 cursive color-white center">subscribe to our mailing list :]</h3>
+                <h3 className="SignUpForm__headline px2 cursive color-white center">
+                  subscribe to our mailing list :]
+                </h3>
                 <label>
-                  <input required id="inputOne" className="my1 w100" type="text" placeholder="first name" name="firstName" value={this.state.firstNameAddress} onChange={this.handleChange} />
+                  <input required id="inputOne" className="handwriting my1 w100" type="text" placeholder="first name" name="firstName" value={this.state.firstNameAddress} onChange={this.handleChange} />
                 </label>
                 <label>
-                  <input required id="inputTwo" className="my1 w100" type="email" placeholder="hello@example.com" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange} />
+                  <input required id="inputTwo" className="handwriting my1 w100" type="email" placeholder="hello@example.com" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange} />
                 </label>
                 <label>
-                  <input required id="inputThree" className="my1 w100" type="text" placeholder="zipcode" name="zipcode" value={this.state.zipcode} onChange={this.handleChange} />
+                  <input required id="inputThree" className="handwriting my1 w100" type="text" placeholder="zipcode" name="zipcode" value={this.state.zipcode} onChange={this.handleChange} />
                 </label>
                 <div className="w100 flex flex-col items-center justify-center">
-                  <button className="SignUpForm__button my1" type="submit">
+                <button className="SignUpForm__button handwriting pointer my1" type="submit">
                     submit
                   </button>
                 </div>
@@ -110,20 +121,20 @@ export default class SignUpForm extends PureComponent {
                     messageActive: true
                   }) : null}
               {status === "success" ? this.setState({
-                    message: "thanks for subscribing (ﾉﾟ▽ﾟ)ﾉ",
-                    messageActive: true
+                    message: "thanks for subscribing",
+                    messageActive: true,
+                    closeOverlay: true
                   }) : null}
               {status === "error" ? this.setState({
-                    message: "oops, please try again（＞ｙ＜）",
+                    message: "oops, please try again",
                     messageActive: true
                   }) : null}
             </div>} />
         <div className="relative w100">
-          <p
-            className={cx("absolute w100 center px2 color-white", {
-              "SignUpForm__message text-center": this.state.messageActive
-            })}
-          >
+          <p className={cx("absolute w100 center mt1 px2 color-white", {
+              "SignUpForm__message text-center handwriting": this.state
+                .messageActive
+            })}>
             {this.state.message}
           </p>
         </div>

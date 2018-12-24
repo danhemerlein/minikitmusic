@@ -7,9 +7,14 @@
 
   input, &__button {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border: 1px solid color('black');
     border-radius: 0;
+  }
+
+  &__button:hover {
+    background: pink;
+    color: color('white');
   }
 
   svg {
@@ -20,7 +25,11 @@
     fill: pink;
   }
 
-  &__headline, &__message {
+  &__headline {
     font-size: 2rem;
+  }
+
+  &__message {
+    font-size: 3rem;
   }
 }
