@@ -1,6 +1,12 @@
 @import "../../styles/app.scss";
 
 .HomePage {
+  -webkit-animation: fadein $transition-duration-mid;
+  -moz-animation: fadein $transition-duration-mid;
+  -ms-animation: fadein $transition-duration-mid;
+  -o-animation: fadein $transition-duration-mid;
+  animation: fadein $transition-duration-mid;
+
   &__image1 {
     width: 65%;
   }
@@ -41,5 +47,10 @@
 
   &__overlay {
     opacity: .5;
+    -webkit-animation: fadeinhalf $transition-duration-med;
+    -moz-animation: fadeinhalf $transition-duration-med;
+    -ms-animation: fadeinhalf $transition-duration-med;
+    -o-animation: fadeinhalf $transition-duration-med;
+    animation: fadeinhalf $transition-duration-med;
   }
 }

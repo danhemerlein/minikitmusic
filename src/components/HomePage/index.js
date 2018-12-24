@@ -101,7 +101,7 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
-          <div className={cx({ hide: this.state.overlayActive === false }, { show: this.state.overlayActive === true })}>
+        <div className={cx({ 'hide': this.state.overlayActive === false }, { 'show': this.state.overlayActive === true })}>
             <div className={cx("HomePage__overlay absolute bg-color-white h100 w100 flex items-center justify-center")}>
               <SignUpForm clickHandler={this.closeOverlay} />
             </div>
