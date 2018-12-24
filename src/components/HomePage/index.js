@@ -13,7 +13,8 @@ class HomePage extends Component {
     super(props)
   
     this.state = {
-       overlayActive: false
+       overlayActive: false,
+       hasBeenClosed: false
     }
   }
 
@@ -26,8 +27,16 @@ class HomePage extends Component {
   }
 
   closeOverlay = () => {    
+    this.setState({ 
+      overlayActive: false, 
+      hasBeenClosed: true 
+    });
+  }
+
+  showOverlay = () => {
     this.setState({
-      overlayActive: false
+      overlayActive: true,
+      hasBeenClosed: false
     })
   }
   
@@ -63,6 +72,7 @@ class HomePage extends Component {
                 >
                   soon
                 </h3>
+
                 <div className={cx("HomePage__svg-container h100 flex flex-col justify-end pr1 justify-end self-end")}>
                   <a href="https://twitter.com/minikitmusic" target="_blank" rel="noopener noreferrer">
                     <TwitterIcon />
@@ -71,6 +81,17 @@ class HomePage extends Component {
               </div>
             </div>
             <div style={bgImage2} className={cx("HomePage__image2 h100 ml1 bg-cover overflow-hidden")}>
+              <div className={cx({ hide: this.state.hasBeenClosed === false }, { show: this.state.hasBeenClosed === true })}>
+                <div onClick={this.showOverlay} className={cx("HomePage__subscribe-button pointer absolute mt1 ml1 flex items-center jusitify-center")}>
+                  <h3
+                    className={cx(
+                      "HomePage__sub-headline w100 text-center cursive color-white text-right p1"
+                    )}
+                  >
+                    subscribe?
+                  </h3>
+                </div>
+              </div>
               <div className={cx("h100 flex flex-col col-6")}>
                 <div className={cx("HomePage__svg-container h100 flex flex-col justify-end pl1")}>
                   <a href="https://www.instagram.com/minikitmusic/" target="_blank" rel="noopener noreferrer">
@@ -80,11 +101,9 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
-        <div className={cx({'hide': this.state.overlayActive === false}, {'show': this.state.overlayActive === true })}>
-            <div className={cx("HomePage__overlay absolute bg-color-white h100 w100")}>
-              <SignUpForm 
-                clickHandler={this.closeOverlay}
-              />
+          <div className={cx({ hide: this.state.overlayActive === false }, { show: this.state.overlayActive === true })}>
+            <div className={cx("HomePage__overlay absolute bg-color-white h100 w100 flex items-center justify-center")}>
+              <SignUpForm clickHandler={this.closeOverlay} />
             </div>
           </div>
         </div>

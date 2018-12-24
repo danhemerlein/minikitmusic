@@ -42,7 +42,7 @@ export default class SignUpForm extends PureComponent {
     return <div className="SignUpForm w100">
         <MailchimpSubscribe url={MAILCHIMP_URL} render={({ subscribe, status }) => <div>
               <div className={cx("flex justify-end w100")}>
-                <div className={cx("col-2")}>
+                <div className={cx("pointer")}>
                   <CloseIcon 
                     clickHandler={this.props.clickHandler}
                   />
@@ -84,8 +84,12 @@ export default class SignUpForm extends PureComponent {
                       EMAIL: result.value.emailAddress,
                       MMERGE6: result.value.zipcode
                     });
+                    setTimeout(() => {
+                      this.props.clickHandler();
+                    }, 3500);
                   }
                 }}>
+                <h3 className="SignUpForm__headline cursive color-white center">subscribe to our mailing list :]</h3>
                 <label>
                   <input required id="inputOne" className="my1 w100" type="text" placeholder="first name" name="firstName" value={this.state.firstNameAddress} onChange={this.handleChange} />
                 </label>
@@ -116,7 +120,7 @@ export default class SignUpForm extends PureComponent {
             </div>} />
         <div className="relative w100">
           <p
-            className={cx("absolute w100 center", {
+            className={cx("absolute w100 center color-white", {
               "SignUpForm__message ": this.state.messageActive
             })}
           >

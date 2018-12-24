@@ -2,11 +2,25 @@
 
 .SignUpForm {
   height: 50vh;
-  
-  input {
+  width: 50%;
+  background-color: color('black');
+
+  input, &__button {
     display: block;
     font-size: 1.5rem;
     border: 1px solid color('black');
     border-radius: 0;
+  }
+
+  svg {
+    width: 100px
+  }
+
+  svg:hover {
+    fill: pink;
+  }
+
+  &__headline {
+    font-size: 2rem;
   }
 }
