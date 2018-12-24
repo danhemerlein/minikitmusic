@@ -4,17 +4,34 @@ import cx from "classnames";
 
 import './HomePage.scss';
 
+import SignUpForm from "components/SignUpForm";
 import TwitterIcon from "components/icons/Twitter";
 import InstaIcon from "components/icons/Insta";
 
 class HomePage extends Component {
-  render() {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       overlayActive: false
+    }
+  }
 
-    const mainBG = { 
-      backgroundImage: "url('/assets/RI8.png')", 
-      backgroundPosition: "25% 75%", 
-      backgroundSize: "contain",
-    };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        overlayActive: true
+      })
+    }, 5000);
+  }
+
+  closeOverlay = () => {    
+    this.setState({
+      overlayActive: false
+    })
+  }
+  
+  render() {
 
     const bgImage1 = {
       backgroundImage: "url(" + this.props.image1SRC + ")"
@@ -24,7 +41,7 @@ class HomePage extends Component {
       backgroundImage: "url(" + this.props.image2SRC + ")"
     };
     
-    return <div style={mainBG} className={cx("HomePage overflow-hidden w100 vh100 p1")}>
+    return <div className={cx("HomePage bg-color-black overflow-hidden w100 vh100 p1")}>
         <div className={cx("w100 h100 relative")}>
           <div className={cx("w100 h100 absolute flex")}>
             <div style={bgImage1} className={cx("HomePage__image1 h100 bg-cover overflow-hidden flex justify-between")}>
@@ -61,6 +78,13 @@ class HomePage extends Component {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        <div className={cx({'hide': this.state.overlayActive === false}, {'show': this.state.overlayActive === true })}>
+            <div className={cx("HomePage__overlay absolute bg-color-white h100 w100")}>
+              <SignUpForm 
+                clickHandler={this.closeOverlay}
+              />
             </div>
           </div>
         </div>

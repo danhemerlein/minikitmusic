@@ -24,4 +24,8 @@
   svg:hover {
     fill: pink;
   }
+
+  &__overlay {
+    opacity: .5;
+  }
 }
