@@ -89,7 +89,7 @@ export default class SignUpForm extends PureComponent {
                     }, 3500);
                   }
                 }}>
-                <h3 className="SignUpForm__headline cursive color-white center">subscribe to our mailing list :]</h3>
+                <h3 className="SignUpForm__headline px2 cursive color-white center">subscribe to our mailing list :]</h3>
                 <label>
                   <input required id="inputOne" className="my1 w100" type="text" placeholder="first name" name="firstName" value={this.state.firstNameAddress} onChange={this.handleChange} />
                 </label>
@@ -120,8 +120,8 @@ export default class SignUpForm extends PureComponent {
             </div>} />
         <div className="relative w100">
           <p
-            className={cx("absolute w100 center color-white", {
-              "SignUpForm__message ": this.state.messageActive
+            className={cx("absolute w100 center px2 color-white", {
+              "SignUpForm__message text-center": this.state.messageActive
             })}
           >
             {this.state.message}
