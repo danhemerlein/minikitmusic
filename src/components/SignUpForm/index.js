@@ -91,11 +91,6 @@ export default class SignUpForm extends PureComponent {
                       EMAIL: result.value.emailAddress,
                       MMERGE6: result.value.zipcode
                     });
-                    // if (this.state.closeOverlay) {
-                    //   setTimeout(() => {
-                    //     this.props.clickHandler();
-                    //   }, 3500);
-                    // }
                   }
                 }}>
                 <h3 className="SignUpForm__headline px2 cursive color-white center">

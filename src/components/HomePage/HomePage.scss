@@ -7,12 +7,31 @@
   -o-animation: fadein $transition-duration-mid;
   animation: fadein $transition-duration-mid;
 
+  &__container {
+    flex-direction: column;
+    
+    @media ($medium-up) {
+      flex-direction: row;
+    }
+  }
+
   &__image1 {
-    width: 65%;
+    width: 100%;
+  
+    @media ($medium-up) {
+      width: 65%; 
+    }
   }
 
   &__image2 {
-  width: 35%;
+    width: 100%;
+    margin-left: 0;   
+    margin-top: 1rem;   
+
+    @media ($medium-up) {
+      width: 35%;
+      margin-left: 1rem;
+    }
   }
 
   &__headline {

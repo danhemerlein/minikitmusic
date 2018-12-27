@@ -52,7 +52,7 @@ class HomePage extends Component {
     
     return <div className={cx("HomePage bg-color-black overflow-hidden w100 vh100 p1")}>
         <div className={cx("w100 h100 relative")}>
-          <div className={cx("w100 h100 absolute flex")}>
+          <div className={cx("HomePage__container w100 h100 absolute flex")}>
             <div style={bgImage1} className={cx("HomePage__image1 h100 bg-cover overflow-hidden flex justify-between")}>
               <h1 className={cx("HomePage__headline cursive color-white p1 col-6")}>
                 <a href="/">minikit</a>
@@ -80,7 +80,7 @@ class HomePage extends Component {
                 </div>
               </div>
             </div>
-            <div style={bgImage2} className={cx("HomePage__image2 h100 ml1 bg-cover overflow-hidden")}>
+            <div style={bgImage2} className={cx("HomePage__image2 h100 bg-cover overflow-hidden")}>
               <div className={cx({ hide: this.state.hasBeenClosed === false }, { show: this.state.hasBeenClosed === true })}>
                 <div onClick={this.showOverlay} className={cx("HomePage__subscribe-button pointer absolute mt1 ml1 flex items-center jusitify-center")}>
                   <h3
