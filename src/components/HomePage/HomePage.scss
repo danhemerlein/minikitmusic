@@ -36,13 +36,21 @@
   }
 
   &__headline {
-    font-size: 4rem;
+    font-size: 2.25rem;
     font-weight: 100;
+
+    @media ($medium-up) {
+      font-size: 4rem;
+    }
   }
 
   &__sub-headline {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 100;
+
+    @media ($medium-up) {
+      font-size: 2rem;
+    }
   }
 
   &__svg-container {
@@ -55,7 +63,7 @@
 
   &__subscribe-button {
     font-weight: 100;
-    font-size: 1rem;
+    font-size: 1.25rem;
     border: 1px solid color('white');
     border-radius: 0; 
     background: color('black');
