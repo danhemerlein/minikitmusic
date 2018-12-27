@@ -1,15 +1,22 @@
 @import "../../styles/app.scss";
 
 .SignUpForm {
-  height: 50vh;
-  width: 50%;
+  height: 100vh;
+  width: 100%;
   background-color: color('black');
+
+  @media ($medium-up) {
+    width: 50%;
+    height: 50vh
+  }
 
   input, &__button {
     display: block;
     font-size: 2rem;
     border: 1px solid color('black');
     border-radius: 0;
+    color: color('black');
+    background: color('white');
   }
 
   &__button:hover {
@@ -18,7 +25,11 @@
   }
 
   svg {
-    width: 100px
+    width: 75px;
+
+    @media ($medium-up) {
+      width: 100px
+    }
   }
 
   svg:hover {
@@ -30,6 +41,10 @@
   }
 
   &__message {
-    font-size: 3rem;
+    font-size: 1.6rem;
+
+    @media ($medium-up) {
+      font-size: 3rem;    
+    }
   }
 }

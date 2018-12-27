@@ -31,6 +31,7 @@
     @media ($medium-up) {
       width: 35%;
       margin-left: 1rem;
+      margin-top: 0;
     }
   }
 
@@ -45,11 +46,16 @@
   }
 
   &__svg-container {
-    width: 100px;
+    width: 75px;
+
+    @media ($medium-up) {
+      width: 100px
+    }
   }
 
   &__subscribe-button {
-    font-size: 1.5rem;
+    font-weight: 100;
+    font-size: 1rem;
     border: 1px solid color('white');
     border-radius: 0; 
     background: color('black');
@@ -57,6 +63,10 @@
 
     &:hover {
       background: pink;
+    }
+
+    @media ($medium-up) {
+      font-size: 2rem;
     }
   }
 

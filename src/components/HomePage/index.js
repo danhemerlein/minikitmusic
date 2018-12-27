@@ -85,7 +85,7 @@ class HomePage extends Component {
                 <div onClick={this.showOverlay} className={cx("HomePage__subscribe-button pointer absolute mt1 ml1 flex items-center jusitify-center")}>
                   <h3
                     className={cx(
-                      "HomePage__sub-headline w100 text-center cursive color-white text-right p1"
+                      "w100 text-center cursive color-white text-right p1"
                     )}
                   >
                     subscribe?
