@@ -61,6 +61,22 @@
     }
   }
 
+  &__insta-desktop {
+    display: none;
+
+    @media ($medium-up) {
+      display: flex;
+    }
+  }
+
+  &__insta-mobile {
+    display: flex;
+
+    @media ($medium-up) {
+      display: none;
+    }
+  }
+
   &__subscribe-button {
     font-weight: 100;
     font-size: 1.25rem;

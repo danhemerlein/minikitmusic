@@ -103,7 +103,7 @@ export default class SignUpForm extends PureComponent {
                   <input required id="inputTwo" className="handwriting my1 w100" type="email" placeholder="hello@example.com" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange} />
                 </label>
                 <label>
-                  <input required id="inputThree" className="handwriting my1 w100" type="text" placeholder="zipcode" name="zipcode" value={this.state.zipcode} onChange={this.handleChange} />
+                  <input required id="inputThree" className="handwriting my1 w100" type="tel" placeholder="zipcode" name="zipcode" value={this.state.zipcode} onChange={this.handleChange} />
                 </label>
                 <div className="w100 flex flex-col items-center justify-center">
                 <button className="SignUpForm__button handwriting pointer my1" type="submit">
@@ -136,4 +136,3 @@ export default class SignUpForm extends PureComponent {
       </div>;
   }
 }
-
