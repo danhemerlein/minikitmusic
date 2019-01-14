@@ -72,14 +72,21 @@ class HomePage extends Component {
                     "HomePage__sub-headline cursive color-white text-right pt1 pr1"
                   )}
                 >
-                  coming
+                  debut single
                 </h3>
                 <h3
                   className={cx(
                     "HomePage__sub-headline cursive color-white text-right pr1"
                   )}
                 >
-                  soon
+                  4 am (Good for You)
+                </h3>
+              <h3
+                className={cx(
+                  "HomePage__sub-headline cursive color-white text-right pr1"
+                )}
+              >
+                coming January 31st
                 </h3>
                 <div className={cx("HomePage__svg-container h100 flex flex-col justify-end pr1 justify-end self-end")}>
                   <a href="https://twitter.com/minikitmusic" target="_blank" rel="noopener noreferrer">
