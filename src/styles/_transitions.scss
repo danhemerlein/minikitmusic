@@ -7,3 +7,135 @@
   from { opacity: 0; }
   to   { opacity: .75; }
 }
+
+@keyframes pulse-light-pink {
+  0% {
+    fill: #fff0f6;
+  }
+
+  25% {
+    fill: #fcc2d7;
+  }
+
+  50% {
+    fill: #f783ac;
+  }
+
+  75% {
+    fill: #fcc2d7;
+  }
+
+  100% {
+    fill: #fff0f6;
+  }
+}
+
+@keyframes pulse-dark-pink {
+  0% {
+    fill: #f06595;
+  }
+
+  25% {
+    fill: #d6336c;
+  }
+
+  50% {
+    fill: #a61e4d;
+  }
+
+  75% {
+    fill: #d6336c;
+  }
+
+  100% {
+    fill: #f06595;
+  }
+}
+
+@keyframes pulse-light-grape {
+  0% {
+    fill: #f8f0fc;
+  }
+
+  25% {
+    fill: #eebefa;
+  }
+
+  50% {
+    fill: #da77f2;
+  }
+
+  75% {
+    fill: #eebefa;
+  }
+
+  100% {
+    fill: #f8f0fc;
+  }
+}
+
+@keyframes pulse-dark-grape {
+  0% {
+    fill: #cc5de8;
+  }
+
+  25% {
+    fill: #ae3ec9;
+  }
+
+  50% {
+    fill: #862e9c;
+  }
+
+  75% {
+    fill: #ae3ec9;
+  }
+
+  100% {
+    fill: #cc5de8;
+  }
+}
+
+@keyframes pulse-dark-yellow {
+  0% {
+    fill: #fcc419;
+  }
+
+  25% {
+    fill: #f59f00;
+  }
+
+  50% {
+    fill: #e67700;
+  }
+
+  75% {
+    fill: #f59f00;
+  }
+
+  100% {
+    fill: #fcc419;
+  }
+}
+
+@keyframes pulse-dark-cyan {
+  0% {
+    fill: #22b8cf;
+  }
+
+  25% {
+    fill: #1098ad;
+  }
+
+  50% {
+    fill: #0b7285;
+  }
+
+  75% {
+    fill: #1098ad;
+  }
+
+  100% {
+    fill: #22b8cf;
+  }
+}

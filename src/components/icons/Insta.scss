@@ -1,0 +1,39 @@
+@import "../../styles/app.scss";
+
+.Insta{
+  &:hover{
+
+    .Insta__shutter{
+      animation: pulse-light-pink 4s infinite ease-in-out;
+    }
+
+    .Insta__rect{
+      animation: pulse-dark-pink 7s infinite ease-in-out;
+    }
+
+    .Insta__rect-left {
+      animation: pulse-light-grape 2s infinite ease-in-out;
+    }
+
+    .Insta__rect-right {
+      animation: pulse-dark-grape 2s infinite ease-in-out;
+    }
+
+    .Insta__oval {
+      animation: pulse-dark-grape 2s infinite ease-in-out;
+    }
+
+    .Insta__flash {
+      animation: pulse-light-grape 2s infinite ease-in-out;
+    }
+
+    .Insta__star {
+      animation: pulse-dark-yellow 4s infinite ease-in-out;
+    }
+
+    .Insta__circle {
+      animation: pulse-dark-cyan 4s infinite ease-in-out;
+    }
+  }
+}
+
